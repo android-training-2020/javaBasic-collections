@@ -24,12 +24,9 @@ class CollectionsTest {
     @SuppressWarnings({"unused", "UnnecessaryLocalVariable"})
     private static List<String> createList(Iterator<String> iterator) {
         List<String> list = new ArrayList<>();
-
-        // TODO: you could ONLY use `Iterator.hasNext` and `Iterator.next` API to copy items to a `List`. No `for` is
-        // allowed.
-        // <--start
-
-        // --end-->
+        while (iterator.hasNext()) {
+            list.add(iterator.next());
+        }
 
         return list;
     }
