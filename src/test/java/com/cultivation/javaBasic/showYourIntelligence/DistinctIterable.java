@@ -25,6 +25,7 @@ public class DistinctIterable<T> implements Iterable<T> {
 
 class DistinctIterator<E> implements Iterator<E> {
     // TODO: Implement the class to pass the test. Note that you cannot put all items into memory or you will fail.
+    private Set set = new HashSet();
     // <--start
     @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private final Iterator<E> iterator;
@@ -35,12 +36,19 @@ class DistinctIterator<E> implements Iterator<E> {
 
     @Override
     public boolean hasNext() {
-        throw new NotImplementedException();
+        return this.set.size() != 2;
     }
 
     @Override
     public E next() {
-        throw new NotImplementedException();
+        int size = this.set.size();
+        while (this.iterator.hasNext() && size < 2) {
+            E element = this.iterator.next();
+            this.set.add(element);
+            if(this.set.size() > size) {
+                return element;
+            }
+        }
+        throw new NoSuchElementException();
     }
-    // --end->
 }

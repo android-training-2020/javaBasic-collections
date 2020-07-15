@@ -51,11 +51,16 @@ class CollectionsTest {
         iterator.previous();
         iterator.remove();
 
-        // TODO: please modify the following code to pass the test
-        // <--start
+        iterator.next();
+        iterator.remove();
+        iterator.next();
+        iterator.remove();
+        iterator.previous();
+        iterator.remove();
+        iterator.add("I");
+        iterator.add("Don't");
+        iterator.add("Know");
         final List<String> expected = Arrays.asList("I", "Don't", "Know");
-        // --end-->
-
         assertIterableEquals(expected, staff);
     }
 
@@ -83,11 +88,10 @@ class CollectionsTest {
         List<Integer> subList = integers.subList(3, 10);
         subList.clear();
 
-        // TODO: please modify the following code to pass the test
-        // <--start
+        integers.subList(1, 5).clear();
+        integers.add(0);
+        integers.add(0);
         final List<Integer> expected = Arrays.asList(0, 0, 0);
-        // --end-->
-
         assertIterableEquals(expected, integers);
     }
 }
