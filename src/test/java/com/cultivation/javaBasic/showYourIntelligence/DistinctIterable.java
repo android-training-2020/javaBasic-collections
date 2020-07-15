@@ -1,7 +1,5 @@
 package com.cultivation.javaBasic.showYourIntelligence;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.*;
 
 public class DistinctIterable<T> implements Iterable<T> {
@@ -24,10 +22,7 @@ public class DistinctIterable<T> implements Iterable<T> {
 }
 
 class DistinctIterator<E> implements Iterator<E> {
-    // TODO: Implement the class to pass the test. Note that you cannot put all items into memory or you will fail.
     private Set set = new HashSet();
-    // <--start
-    @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private final Iterator<E> iterator;
 
     DistinctIterator(Iterator<E> iterator) {

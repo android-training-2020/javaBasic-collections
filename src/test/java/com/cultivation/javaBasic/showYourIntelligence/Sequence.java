@@ -1,8 +1,5 @@
 package com.cultivation.javaBasic.showYourIntelligence;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Sequence implements Iterable<Integer> {
